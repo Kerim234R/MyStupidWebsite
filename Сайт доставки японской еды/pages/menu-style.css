@@ -1,0 +1,332 @@
+/* Стили для сетки блюд */
+.food-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Расстояние между блюдами */
+    justify-content: flex-start;
+}
+
+/* Стили для каждого блюда */
+.food-item {
+    width: calc(33.33% - 14px); /* Ширина блюда (3 в ряд с учетом gap) */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Стили для изображения блюда */
+.food-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Стили для названия блюда */
+.food-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.food-item h3:hover {
+    color: red;
+    text-decoration: underline;
+    font-size: 30px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/* Стили для цены */
+.food-item p {
+    font-size: 18px;
+    color: #dd1a1a;
+    margin: 5px 0;
+}
+
+/* Стили для кнопки "В корзину" */
+.food-item button {
+    background-color: #dd1a1a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.food-item button:hover {
+    background-color: #bb1616;
+}
+
+/* Стили для контейнера 2 (заголовки категорий) */
+.container2 {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    border: 5px solid yellow;
+    border-radius: 10px;
+    padding: 10px; /* Увеличим отступы для лучшего визуального восприятия */
+    box-sizing: border-box;
+    margin: 10px 0; /* Отступы сверху и снизу */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта "поднятия" */
+    transition: all 0.3s ease; /* Плавные переходы для hover-эффектов */
+    background: linear-gradient(90deg, #ffeb3b, #ffc107); /* Жёлтый градиент */
+}
+
+.container2:hover {
+    transform: translateY(-5px); /* Эффект поднятия при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Увеличенная тень при наведении */
+}
+
+.container2 b {
+    font-family: Takashimura;
+    color: #000000;
+    font-size: 32px; /* Увеличим размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    text-align: center; /* Центрирование текста */
+    text-transform: uppercase; /* Преобразуем текст в верхний регистр */
+    letter-spacing: 2px; /* Увеличим расстояние между буквами */
+    margin: 0; /* Убираем отступы */
+}
+
+/* Стили для категорий */
+.categories {
+    display: flex;
+    gap: 25px;
+    background-color: #ffffff;
+    border: 5px solid #ff0000;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 20px;
+}
+
+.categories a:hover {
+    text-decoration: underline;
+    color: red;
+    transition: 0.7s;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 300;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-attachment: fixed;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 5px solid #ff0000;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.close {
+    color: #ff0000;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: rgb(193, 0, 0);
+    cursor: pointer;
+}
+
+/* Темная тема для страницы "Меню" */
+.dark-theme .food-item {
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+
+.dark-theme .food-item h3 {
+    color: white;
+}
+
+.dark-theme .food-item h3:hover {
+    color: yellow;
+}
+
+.dark-theme .food-item p {
+    color: white;
+}
+
+.dark-theme .food-item button {
+    background-color: white;
+    color: black;
+}
+
+.dark-theme .food-item button:hover {
+    background-color: #cdcdcd;
+}
+
+.dark-theme .container2 {
+    background: linear-gradient(90deg, red, black); /* Измените градиент для темной темы */
+    border-color: yellow;
+}
+
+.dark-theme .container2 b {
+    color: white;
+}
+
+.dark-theme .categories {
+    background-color: black;
+    border-color: yellow;
+}
+
+.dark-theme .categories a {
+    color: white;
+}
+
+.dark-theme .categories a:hover {
+    color: yellow;
+}
+
+.dark-theme .modal-content {
+    background-color: #1e1e1e;
+    color: white;
+    border-color: yellow;
+}
+
+.dark-theme .close {
+    color: yellow;
+}
+
+.dark-theme .close:hover {
+    color: yellow;
+}
+
+/* Стили для фиксированного меню */
+.menu-header {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0; /* Привязка к верхней части экрана */
+    left: 50; /* Привязка к левой части экрана */
+    width: 80%; /* Ширина на весь экран */
+    background-color: white; /* Фон, чтобы текст не накладывался */
+    z-index: 200; /* Убедитесь, что меню находится поверх других элементов */
+    padding: 10px 0; /* Отступы для лучшего визуального восприятия */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Тень для эффекта "поднятия" */
+}
+
+.menu-header .categories {
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.main-content {
+    padding-top: 200px; /* Отступ сверху, чтобы контент не перекрывался меню */
+}
+
+.dark-theme .menu-header {
+    background-color: black; /* Фон, чтобы текст не накладывался */
+}
+
+/*@media (max-width: 768px) {
+    .menu-header {
+        width: 100%;
+        padding-top: 10;
+    }
+    .categories {
+        margin-top: 10px;
+        width: 95%;
+        gap: 16px;
+    }
+    .categories a {
+        font-size: 24px;
+    }
+    .food-item {
+        width: calc(50% - 10px);
+    }
+    .food-item img {
+        height: 150px;
+    }
+    .food-item h3 {
+        font-size: 24px;
+    }
+    .food-item p {
+        font-size: 24px;
+    }
+    .food-item button {
+        font-size: 24px;
+    }
+    .modal-content {
+        width: 90%;
+    }
+    .modal img {
+        height: 150%;
+    }
+} */
+@media(max-width: 480px){
+    .menu-header{
+        width: 80%;
+    }
+    .food-item {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .menu-header {
+        width: 95%;
+        padding-top: 50px; /* Отступ для гамбургера */
+    }
+
+    .categories {
+        flex-wrap: wrap; /* Переносим категории на маленьких экранах */
+        justify-content: center;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .categories a {
+        font-size: 22px;
+    }
+
+    .food-item {
+        width: calc(50% - 10px);
+    }
+
+    .food-item img {
+        height: 200px; /* Больше изображения */
+        width: 100%;
+        object-fit: scale-down;
+    }
+
+    .food-item h3 {
+        font-size: 28px;
+    }
+
+    .food-item p {
+        font-size: 24px;
+    }
+
+    .food-item button {
+        padding: 15px 25px;
+        font-size: 20px;
+    }
+
+    .container2 b {
+        font-size: 28px;
+    }
+}

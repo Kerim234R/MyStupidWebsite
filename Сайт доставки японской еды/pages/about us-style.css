@@ -1,0 +1,105 @@
+/* Основной контент страницы "О нас" */
+.about-content {
+    display: flex;
+    gap: 30px;
+    margin: 20px;
+    align-items: center;
+}
+
+/* Стили для текста */
+.about-text {
+    flex: 1;
+    font-size: 24px;
+}
+
+.about-text p {
+    margin-bottom: 35px;
+}
+
+.about-text big strong {
+    color: red;
+    font-size: 22px;
+}
+
+/* Для изображений */
+.about-image {
+    flex: 1;
+    max-width: 50%;
+    max-height: 30%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 5px solid red;
+}
+
+/* Для контактной информации */
+.contact-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border-left: 4px solid red;
+}
+
+.contact-info p {
+    margin: 8px 0;
+}
+
+.contact-info a {
+    color: red;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Темная тема для страницы "О нас" */
+.dark-theme .about-content {
+    background-color: black;
+    color: white;
+}
+
+.dark-theme .about-text {
+    color: white;
+}
+
+.dark-theme .about-text strong {
+    color: yellow; /* Измените цвет акцентов, если нужно */
+}
+
+.dark-theme .about-image img {
+    border-color: yellow; /* Измените цвет рамки изображения */
+}
+
+.dark-theme .contact-info {
+    background-color: black;
+    border-left-color: yellow;
+    color: white;
+}
+
+.dark-theme .contact-info a {
+    color: yellow
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-image {
+        max-width: 100%;
+        order: -1; /* Изображение будет вверху на мобильных устройствах */
+    }
+
+    .about-text {
+        font-size: 20px;
+    }
+
+    .contact-info {
+        font-size: 18px;
+    }
+}

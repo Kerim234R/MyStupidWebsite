@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ямато: Ресторан японской кухни</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="menu-style.css"> <!-- Подключаем дополнительный CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../theme.js"></script><!-- Скрипт на изменение темы (надо много чего добавить) -->
+    <script src="../menu.js"></script>
+    <script src="cart.js"></script>
+</head>
+
+<body>
+
+    <!-- Создание класса контейнер для хранения настроек интерфейса -->
+    <div class="container">
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <!-- Левая столб с кнопками -->
+        <div class="left-side">
+            <h1><b><big>Ямато</big></b> <button id="theme-toggle"><i class = "fas fa-sun"></i></button></h1>
+            <a href = "../index.html">Главная</a>
+            <a href = "menu.html">Меню</a>
+            <a href="cart.html">Корзина<span class="cart-counter"></span></a>
+            <a href = "promotions.html">Акции</a>
+            <a href = "news.html">Что нового</a>
+            <a href = "about us.html">О нас</a>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+            <div class="menu-header">
+                <h1>Меню <i class="fas fa-utensils"></i></h1>
+                <hr>
+                <!-- Категории -->
+                <div class = "categories">
+                    <a href="#rolls">Роллы</a>
+                    <a href="#sushi">Суши</a>
+                    <a href="#rice">Рис</a>
+                    <a href="#soup">Супы</a>
+                    <a href="#poke">Салаты</a>
+                    <a href="#zakus">Закуски</a>
+                    <a href="#drinks">Напитки</a>
+                </div>
+                <hr>
+            </div>
+            <br><br>
+            <div class = "container2">
+                <h2 id="rolls"><b>Роллы</b></h2>
+            </div>
+            <br>
+            <!-- Контейнер для блюд -->
+            <div class="food-grid">
+                <!-- Роллы -->
+                <!-- Блюдо 1 -->
+                <div class="food-item">
+                    <img src="../images/food/rollscrabom.jpg" alt="Ролл с крабом">
+                    <h3 onclick = "openModal('modal1')">Ролл с крабом</h3>
+                    <p>350 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal1')">&times;</span>
+                            <img src="../images/food/rollscrabom.jpg" alt="Ролл с крабом">
+                            <h2>Ролл с крабом</h2>
+                            <strong>Состав:</strong> Рис, краб, нори.<br>
+                            <strong>Калорийность:</strong> 280 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 2 -->
+                <div class="food-item">
+                    <img src="../images/food/ogurecroll.jpg" alt="Ролл с огурцом">
+                    <h3 onclick = "openModal('modal2')">Ролл с огурцом</h3>
+                    <p>250 руб.</p>
+                    <button>В корзину</button>
+
+                    <div id="modal2" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal2')">&times;</span>
+                            <img src="../images/food/ogurecroll.jpg" alt="Ролл с огурцом">
+                            <h2>Ролл с огурцом</h2>
+                            <strong>Состав:</strong> Рис,нори, огурец.<br>
+                            <strong>Калорийность:</strong> 270 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 3 -->
+                <div class="food-item">
+                    <img src="../images/food/filadelfiaroll.jpg" alt="Филадельфия">
+                    <h3 onclick = "openModal('modal3')">Филадельфия</h3>
+                    <p>400 руб.</p>
+                    <button>В корзину</button>
+
+                    <div id="modal3" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal3')">&times;</span>
+                            <img src="../images/food/filadelfiaroll.jpg" alt="Филадельфия">
+                            <h2>Филадельфия</h2>
+                            <strong>Состав:</strong> Рис, нори, твороженный сыр, огурец, лосось.<br>
+                            <strong>Калорийность:</strong> 270 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 4 -->
+                <div class="food-item">
+                    <img src="../images/food/rollstuncom.jpg" alt="Жареный ролл с тунцом">
+                    <h3 onclick = "openModal('modal4')">Жареный ролл с тунцом</h3>
+                    <p>350 руб.</p>
+                    <button>В корзину</button>
+
+                    <div id="modal4" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal4')">&times;</span>
+                            <img src="../images/food/rollstuncom.jpg" alt="Жаренный ролл с тунцом">
+                            <h2>Жаренный ролл с тунцом</h2>
+                            <strong>Состав:</strong> Рис, нори, твороженный сыр, тунец, кляр и сухари.<br>
+                            <strong>Калорийность:</strong> 280 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 5 -->
+                <div class="food-item">
+                    <img src="../images/food/rollskrevetkoi.jpg" alt="Ролл с креветкой">
+                    <h3 onclick = "openModal('modal5')">Ролл с креветкой</h3>
+                    <p>400 руб.</p>
+                    <button>В корзину</button>
+
+                    <div id="modal5" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal5')">&times;</span>
+                            <img src="../images/food/rollskrevetkoi.jpg" alt="Ролл с креветкой">
+                            <h2>Ролл с креветкой</h2>
+                            <strong>Состав:</strong> Рис, нори, креветка.<br>
+                            <strong>Калорийность:</strong> 290 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 6 -->
+                <div class="food-item">
+                    <img src="../images/food/rollssalatomchurka.jpg" alt="Ролл с салатом чукой">
+                    <h3 onclick = "openModal('modal6')">Ролл с салатом чукой</h3>
+                    <p>200 руб.</p>
+                    <button>В корзину</button>
+
+                    <div id="modal6" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal6')">&times;</span>
+                            <img src="../images/food/rollssalatomchurka.jpg" alt="Ролл с салатом чукой">
+                            <h2>Ролл с салатом чукой</h2>
+                            <strong>Состав:</strong> Рис, нори, салат чука, кунжут.<br>
+                            <strong>Калорийность:</strong> 308 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 7 -->
+                <div class="food-item">
+                    <img src="../images/food/rollslososemzareniy.jpg" alt="Жареный ролл с лососем">
+                    <h3 onclick = "openModal('modal7')">Жареный ролл с лососем</h3>
+                    <p>400 руб.</p>
+                    <button>В корзину</button>
+
+                    <div id="modal7" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal7')">&times;</span>
+                            <img src="../images/food/rollslososemzareniy.jpg" alt="Жаренный ролл с лососем">
+                            <h2>Жаренный ролл с тунцом</h2>
+                            <strong>Состав:</strong> Рис, нори, твороженный сыр, лосось, кляр и сухари.<br>
+                            <strong>Калорийность:</strong> 290 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 8 -->
+                <div class="food-item">
+                    <img src="../images/food/rolltruetocaesar.jpg" alt="Цезарь ролл">
+                    <h3 onclick = "openModal('modal8')">Цезарь ролл</h3>
+                    <p>400 руб.</p>
+                    <button>В корзину</button>
+
+                    <div id="modal8" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal8')">&times;</span>
+                            <img src="../images/food/rolltruetocaesar.jpg" alt="Цезарь ролл">
+                            <h2>Жаренный ролл с тунцом</h2>
+                            <strong>Состав:</strong> Рис, нори, кунжут, курица, помидор, капуста, сладкий соус чили.<br>
+                            <strong>Калорийность:</strong> 270 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 9 -->
+                <div class="food-item">
+                    <img src="../images/food/rollstuncom2.jpg" alt="Ролл с тунцом">
+                    <h3 onclick = "openModal('modal9')">Ролл с тунцом</h3>
+                    <p>350 руб.</p>
+                    <button>В корзину</button>
+
+                    <div id="modal9" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal9')">&times;</span>
+                            <img src="../images/food/rollstuncom2.jpg" alt="Ролл с тунцом">
+                            <h2>Жаренный ролл с тунцом</h2>
+                            <strong>Состав:</strong> Рис, нори, тунец.<br>
+                            <strong>Калорийность:</strong> 280 ккал
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <div class = "container2">
+                <h2 id="sushi"><b>Суши</b></h2>
+            </div>
+            <br>
+            <!-- Контейнер для блюд 2 -->
+            <div class="food-grid">
+                <!-- Суши -->
+                <!-- Блюдо 10 -->
+                <div class="food-item">
+                    <img src="../images/food/sushisyake.jpg" alt="Суши Сякэ">
+                    <h3 onclick = "openModal('modal10')">Суши Сякэ</h3>
+                    <p>170 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal10" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal10')">&times;</span>
+                            <img src="../images/food/sushisyake.jpg" alt="Суши Сякэ">
+                            <h2>Суши Сякэ</h2>
+                            <strong>Состав:</strong> Рис, лосось.<br>
+                            <strong>Калорийность:</strong> 290 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 11 -->
+                <div class="food-item">
+                    <img src="../images/food/sushichuka.jpg" alt="Суши Чука">
+                    <h3 onclick = "openModal('modal11')">Суши Чука</h3>
+                    <p>140 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal11" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal11')">&times;</span>
+                            <img src="../images/food/sushichuka.jpg" alt="Суши Чука">
+                            <h2>Суши Чука</h2>
+                            <strong>Состав:</strong> Рис, салат чука, кунжут, лист нори, острый соус.<br>
+                            <strong>Калорийность:</strong> 280 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 12 -->
+                <div class="food-item">
+                    <img src="../images/food/sushisyakespice.jpg" alt="Суши Чука">
+                    <h3 onclick = "openModal('modal12')">Суши Сякэ (острые)</h3>
+                    <p>200 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal12" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal12')">&times;</span>
+                            <img src="../images/food/sushisyakespice.jpg" alt="Суши Сякэ (острые)">
+                            <h2>Суши Сякэ (острые)</h2>
+                            <strong>Состав:</strong> Рис, лосось, лист нори, острый соус.<br>
+                            <strong>Калорийность:</strong> 310 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 13 -->
+                <div class="food-item">
+                    <img src="../images/food/sushitunec.jpg" alt="Суши с тунцом">
+                    <h3 onclick = "openModal('modal13')">Суши с тунцом</h3>
+                    <p>150 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal13" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal13')">&times;</span>
+                            <img src="../images/food/sushitunec.jpg" alt="Суши с тунцом">
+                            <h2>Суши с тунцом</h2>
+                            <strong>Состав:</strong> Рис, тунец, лист нори, острый соус.<br>
+                            <strong>Калорийность:</strong> 270 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 14 -->
+                <div class="food-item">
+                    <img src="../images/food/sushikrevetka.jpg" alt="Суши с креветкой">
+                    <h3 onclick = "openModal('modal14')">Суши с креветкой</h3>
+                    <p>170 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal14" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal14')">&times;</span>
+                            <img src="../images/food/sushikrevetka.jpg" alt="Суши с креветкой">
+                            <h2>Суши с креветкой</h2>
+                            <strong>Состав:</strong> Рис, креветка, лист нори, острый соус.<br>
+                            <strong>Калорийность:</strong> 280 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 15 -->
+                <div class="food-item">
+                    <img src="../images/food/sushikrab.jpg" alt="Суши с крабом">
+                    <h3 onclick = "openModal('modal15')">Суши с крабом</h3>
+                    <p>140 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal15" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal15')">&times;</span>
+                            <img src="../images/food/sushikrab.jpg" alt="Суши с крабом">
+                            <h2>Суши с крабом</h2>
+                            <strong>Состав:</strong> Рис, краб, лист нори, острый соус.<br>
+                            <strong>Калорийность:</strong> 280 ккал
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <div class = "container2">
+                <h2 id="rice"><b>Рис Тяхан</b></h2>
+            </div>
+            <br>
+            <!-- Контейнер для блюд 3 -->
+            <div class="food-grid">
+                <!-- Рис Тяхан -->
+                <!-- Блюдо 16 -->
+                <div class="food-item">
+                    <img src="../images/food/risgovadina.png" alt="Тяхан с говядиной">
+                    <h3 onclick = "openModal('modal16')">Тяхан с говядиной</h3>
+                    <p>360 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal16" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal16')">&times;</span>
+                            <img src="../images/food/risgovadina.png" alt="Тяхан с говядиной">
+                            <h2>Тяхан с говядиной</h2>
+                            <strong>Состав:</strong> Рис, говядина, морковь, лук, помидоры, огурцы, соус терияки.<br>
+                            <strong>Калорийность:</strong> 420 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 17 -->
+                <div class="food-item">
+                    <img src="../images/food/riskurica.png" alt="Тяхан с курицей">
+                    <h3 onclick = "openModal('modal17')">Тяхан с курицей</h3>
+                    <p>320 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal17" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal17')">&times;</span>
+                            <img src="../images/food/riskurica.png" alt="Тяхан с курицей">
+                            <h2>Тяхан с курицей</h2>
+                            <strong>Состав:</strong> Рис, курица, морковь, лук, помидоры, огурцы, соус терияки.<br>
+                            <strong>Калорийность:</strong> 420 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 18 -->
+                <div class="food-item">
+                    <img src="../images/food/risovosh.png" alt="Тяхан с овощами">
+                    <h3 onclick = "openModal('modal18')">Тяхан с овощами</h3>
+                    <p>280 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal18" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal18')">&times;</span>
+                            <img src="../images/food/risovosh.png" alt="Тяхан с овощами">
+                            <h2>Тяхан с овощами</h2>
+                            <strong>Состав:</strong> Рис, морковь, лук, помидоры, огурцы, соус терияки.<br>
+                            <strong>Калорийность:</strong> 280 ккал
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <div class = "container2">
+                <h2 id="soup"><b>Супы</b></h2>
+            </div>
+            <br>
+            <!-- Контейнер для блюд 4 -->
+            <div class="food-grid">
+                <!-- Супы -->
+                <!-- Блюдо 19 -->
+                <div class="food-item">
+                    <img src="../images/food/supfobo.png" alt="Суп Фо-бо">
+                    <h3 onclick = "openModal('modal19')">Суп Фо-бо</h3>
+                    <p>400 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal19" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal19')">&times;</span>
+                            <img src="../images/food/supfobo.png" alt="Суп Фо-бо">
+                            <h2>Суп Фо-бо</h2>
+                            <strong>Состав:</strong> Говяжий бульон, рисовая лапша, говядина, зелёный лук, кинза, мята, лайм.<br>
+                            <strong>Калорийность:</strong> 440 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 20 -->
+                <div class="food-item">
+                    <img src="../images/food/suptomkha.png" alt="Суп Том Кха">
+                    <h3 onclick = "openModal('modal20')">Суп Том Кха</h3>
+                    <p>370 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal20" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal20')">&times;</span>
+                            <img src="../images/food/suptomkha.png" alt="Суп Том Кха">
+                            <h2>Суп Том Кха</h2>
+                            <strong>Состав:</strong> Сливки, курица, грибы, специи, кокосовое молоко, лайм, красный перец, рис.<br>
+                            <strong>Калорийность:</strong> 420 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 21 -->
+                <div class="food-item">
+                    <img src="../images/food/suptomyam.png" alt="Суп Том Ям">
+                    <h3 onclick = "openModal('modal21')">Суп Том Ям</h3>
+                    <p>550 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal21" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal21')">&times;</span>
+                            <img src="../images/food/suptomyam.png" alt="Суп Том Ям">
+                            <h2>Суп Том Ям</h2>
+                            <strong>Состав:</strong> Сливки, мидии, креветки, грибы, помидоры черри, тигровые креветки, кокосовое молоко, лайм, красный перец, рис.<br>
+                            <strong>Калорийность:</strong> 480 ккал
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <br><br>
+            <div class = "container2">
+                <h2 id="poke"><b>Салаты</b></h2>
+            </div>
+            <br>
+            <!-- Контейнер для блюд 5 -->
+            <div class="food-grid">
+                <!-- Салаты -->
+                <!-- Блюдо 22 -->
+                <div class="food-item">
+                    <img src="../images/food/pokeLosos.png" alt="Поке с лососем">
+                    <h3 onclick = "openModal('modal22')">Поке с лососем</h3>
+                    <p>430 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal22" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal22')">&times;</span>
+                            <img src="../images/food/pokeLosos.png" alt="Поке с лососем">
+                            <h2>Поке с лососем</h2>
+                            <strong>Состав:</strong> Рис, огурец, лосось, авокадо, помидор черри, апельсин, кукуруза, бобы, терияки соус, соевый соус.<br>
+                            <strong>Калорийность:</strong> 400 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 23 -->
+                <div class="food-item">
+                    <img src="../images/food/pokeKurica.png" alt="Поке с курицей">
+                    <h3 onclick = "openModal('modal23')">Поке с курицей</h3>
+                    <p>400 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal23" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal23')">&times;</span>
+                            <img src="../images/food/pokeKurica.png" alt="Поке с курицей">
+                            <h2>Поке с курицей</h2>
+                            <strong>Состав:</strong> Рис, ананас, курица, авокадо, огурец, помидор черри, кукуруза, бобы, терияки соус, соевый соус.<br>
+                            <strong>Калорийность:</strong> 400 ккал
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <div class = "container2">
+                <h2 id="zakus"><b>Закуски</b></h2>
+            </div>
+            <br>
+            <!-- Контейнер для блюд 6 -->
+            <div class="food-grid">
+                <!-- Закуски -->
+                <!-- Блюдо 24 -->
+                <div class="food-item">
+                    <img src="../images/food/fri.jpg" alt="Картошка фри">
+                    <h3 onclick = "openModal('modal24')">Картошка фри</h3>
+                    <p>100 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal24" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal24')">&times;</span>
+                            <img src="../images/food/fri.jpg" alt="Картошка фри">
+                            <h2>Картошка фри</h2>
+                            <strong>Состав:</strong> картошка, соль.<br>
+                            <strong>Калорийность:</strong> 250 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 25 -->
+                <div class="food-item">
+                    <img src="../images/food/kartop.jpg" alt="Картольфельные дольки">
+                    <h3 onclick = "openModal('modal25')">Картофельные дольки</h3>
+                    <p>110 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal25" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal25')">&times;</span>
+                            <img src="../images/food/kartop.jpg" alt="Картофельные дольки">
+                            <h2>Картофельные дольки</h2>
+                            <strong>Состав:</strong> картошка, соль, укроп.<br>
+                            <strong>Калорийность:</strong> 270 ккал
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блюдо 26 -->
+                <div class="food-item">
+                    <img src="../images/food/nagens.jpg" alt="Нагетсы">
+                    <h3 onclick = "openModal('modal26')">Нагетсы</h3>
+                    <p>120 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal26" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal26')">&times;</span>
+                            <img src="../images/food/nagens.jpg" alt="Нагетсы">
+                            <h2>Нагетсы</h2>
+                            <strong>Состав:</strong> курица, панировка.<br>
+                            <strong>Калорийность:</strong> 300 ккал
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br>
+            <div class = "container2">
+                <h2 id="drinks"><b>Напитки</b></h2>
+            </div>
+            <br>
+            <!-- Контейнер для блюд 7 -->
+            <div class="food-grid">
+                <!-- Напитки -->
+                <!-- Блюдо 27 -->
+                <div class="food-item">
+                    <img src="../images/food/mohitoklassic.png" alt="Мохито">
+                    <h3 onclick = "openModal('modal27')">Мохито</h3>
+                    <p>75 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal27" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal27')">&times;</span>
+                            <img src="../images/food/mohitoklassic.png" alt="Мохито">
+                            <h2>Мохито</h2>
+                            <strong>Состав:</strong> газированная вода, тростниковый сахар, лайм, мята, лёд.<br>
+                            <strong>Калорийность:</strong> 53 ккал
+                        </div>
+                    </div>
+                </div>
+                <!-- Блюдо 27 -->
+                <div class="food-item">
+                    <img src="../images/food/mohitoklubnika.png" alt="Мохито клубничное">
+                    <h3 onclick = "openModal('modal29')">Мохито клубничное</h3>
+                    <p>75 руб.</p>
+                    <button>В корзину</button>
+                
+                    <!-- Модальное окно -->
+                    <div id="modal29" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal('modal29')">&times;</span>
+                            <img src="../images/food/mohitoklubnika.png" alt="Мохито клубничное">
+                            <h2>Мохито клубничное</h2>
+                            <strong>Состав:</strong> газированная вода, тростниковый сахар, лайм, мята, лёд, клубника.<br>
+                            <strong>Калорийность:</strong> 60 ккал
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<script>// JavaScript код для окна с описанием
+    // Функция для открытия модального окна
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    // Функция для закрытия модального окна
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    // Закрытие модального окна при клике вне его области
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    }
+    
+    //Обновляем обработчики кнопок "В корзину"
+    // Добавляем обработчики для всех кнопок "В корзину"
+    document.querySelectorAll('.food-item button').forEach(button => {
+        button.addEventListener('click', function() {
+            const foodItem = this.closest('.food-item');
+            const name = foodItem.querySelector('h3').textContent;
+            const price = parseInt(foodItem.querySelector('p').textContent);
+            addToCart(name, price);
+            updateCartDisplay();
+        });
+    });
+
+   //скрипт для отображения счётчика на других страницах
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCartCounter();
+        updateCartDisplay();
+    });
+
+</script>

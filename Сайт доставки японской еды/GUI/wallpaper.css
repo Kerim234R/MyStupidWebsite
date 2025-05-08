@@ -1,0 +1,17 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Убедимся, что html и body занимают всю высоту экрана */
+    overflow: hidden; /* Убираем прокрутку */
+}
+
+.main-content {
+    padding: 0; /* Убираем padding, чтобы фото было на весь экран */
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .main-content{
+        margin-top: 0px;
+    }
+}

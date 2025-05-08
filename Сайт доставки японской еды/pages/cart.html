@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - Ямато</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="cart-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../theme.js"></script>
+    <script src="../menu.js"></script><!-- Скрипт на открытие меню -->
+    <script src="cart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Гамбургер с сыром и кепчупом -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="left-side">
+            <h1><b><big>Ямато</big></b> <button id="theme-toggle"><i class="fas fa-sun"></i></button></h1>
+            <a href = "../index.html">Главная</a>
+            <a href = "menu.html">Меню</a>
+            <a href="cart.html">Корзина <span class="cart-counter"></span></a>
+            <a href = "promotions.html">Акции</a>
+            <a href = "news.html">Что нового</a>
+            <a href = "about us.html">О нас</a>
+        </div>
+
+        <div class="main-content">
+            <h1>Корзина <i class="fas fa-shopping-cart"></i></h1>
+            <hr>
+        
+            <div id="cart-items" class="cart-items">
+                <!-- Товары будут добавляться сюда динамически -->
+            </div>
+
+            <div class="cart-total">
+                <hr>
+                <div class="total-section">
+                    <h2>Итого: <span id="total-price">0</span> руб.</h2>
+                    <button id="order-button" class="order-button disabled" disabled>Заказать</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="order" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('order')">&times;</span>
+                <h2>Оформление заказа</h2>
+                <hr>
+                <h3>* - обязательные поля</h3>
+                <form id="order-form" action="https://formsubmit.co/kerimradzabilaev@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Новый заказ с сайта Ямато">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://вашсайт.ru/спасибо.html">
+                    
+                    <label for="address">*Адрес доставки:</label>
+                    <input type="text" id="address" name="address" required>
+                    <br>
+                    <label for="phone">*Номер телефона:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <br>
+                    <label for="comment">Комментарий к заказу:</label>
+                    <textarea id="comment" name="comment" rows="4"></textarea>
+                    <br>
+                    <input type="hidden" id="order-items" name="order_items" value="">
+                    <input type="hidden" id="order-total" name="total_price" value="">
+                    
+                    <button type="submit" class="order-button">Заказать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- Скрипт для окна заказа -->
+<script>
+    function clearCart() {
+        localStorage.removeItem('cart'); // Удаляем корзину из localStorage
+        updateCartDisplay(); // Обновляем отображение корзины
+        window.location.href = '../index.html';
+    }
+
+    document.getElementById('order-form')?.addEventListener('submit', function() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || {};
+        
+        // Формируем текст заказа
+        let orderItems = '';
+        for (const [name, item] of Object.entries(cart)) {
+            orderItems += `${name} - ${item.quantity} x ${item.price} руб. = ${item.quantity * item.price} руб.\n`;
+        }
+        
+        // Заполняем скрытые поля
+        document.getElementById('order-items').value = orderItems;
+        document.getElementById('order-total').value = document.getElementById('total-price').textContent + ' руб.';
+        
+        // Очищаем корзину после отправки
+        clearCart();
+    });
+
+    /*document.getElementById('order-form')?.addEventListener('submit', (event) => {
+        event.preventDefault(); // Предотвращаем отправку формы
+        // Получаем данные из формы
+        const address = document.getElementById('address').value;
+        const phone = document.getElementById('phone').value;
+        const comment = document.getElementById('comment').value;
+        // Получаем данные о заказе из корзины
+        const cart = JSON.parse(localStorage.getItem('cart')) || {};
+        // Здесь можно добавить логику для отправки данных на сервер или по email
+        // Очищаем корзину
+        clearCart();
+        // Закрываем модальное окно
+        closeModal('order');
+    });*/
+
+    function openModal(order) {
+        document.getElementById(order).style.display = "block";
+    }
+
+    // Функция для закрытия модального окна
+    function closeModal(order) {
+        document.getElementById(order).style.display = "none";
+    }
+
+    // Закрытие модального окна при клике вне его области
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    }
+
+    document.getElementById("order-button").addEventListener("click", function() {
+        openModal("order");
+    });
+
+
+    function updateModalTotalPrice() {
+        const totalPrice = document.getElementById('total-price').textContent; // Получаем сумму из корзины
+        const modalTotalPrice = document.querySelector('#order #total-price'); // Находим элемент в модальном окне
+        if (modalTotalPrice) {
+            modalTotalPrice.textContent = totalPrice; // Обновляем сумму в модальном окне
+        }
+    }
+
+    // Обработчик кнопки "Заказать"
+    document.getElementById('order-button')?.addEventListener('click', () => {
+        updateModalTotalPrice(); // Обновляем сумму в модальном окне
+        openModal('order'); // Открываем модальное окно
+    });
+</script>

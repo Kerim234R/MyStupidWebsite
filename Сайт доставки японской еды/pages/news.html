@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Что нового - Ямато</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="news-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../theme.js"></script>
+    <script src="../menu.js"></script>
+    <script src="cart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="left-side">
+            <h1><b><big>Ямато</big></b> <button id="theme-toggle"><i class="fas fa-sun"></i></button></h1>
+            <a href="../index.html">Главная</a>
+            <a href="menu.html">Меню</a>
+            <a href="cart.html">Корзина <span class="cart-counter"></span></a>
+            <a href="promotions.html">Акции</a>
+            <a href="news.html">Что нового</a>
+            <a href="about us.html">О нас</a>
+        </div>
+
+        <div class="main-content">
+            <h1>Что нового <i class="fas fa-newspaper"></i></h1>
+            <hr>
+            
+            <div class="news-timeline">
+                <!-- Новость 1 -->
+                <div class="news-card">
+                    <div class="news-date">12.04.2025</div>
+                    <div class="news-content">
+                        <h2>Обновление меню!</h2>
+                        <p>Добавлены новые блюда в меню! Теперь можно заказывать напитки!</p>
+                        <div class="news-tag">#Меню</div>
+                    </div>
+                </div>
+                
+                <!-- Новость 2 -->
+                <div class="news-card">
+                    <div class="news-date">10.04.2025</div>
+                    <div class="news-content">
+                        <h2>Улучшен интерфейс сайта</h2>
+                        <p>Мы полностью переработали дизайн сайта для вашего удобства. Теперь проще делать заказы и находить нужные блюда! Также была добавлена тёмная тема.</p>
+                        <div class="news-tag">#Сайт</div>
+                    </div>
+                </div>
+                
+                <!-- Новость 3 -->
+                <div class="news-card">
+                    <div class="news-date">29.03.2025</div>
+                    <div class="news-content">
+                        <h2>Разделы в меню</h2>
+                        <p>В меню были добавлены разделы блюд для удобной сортировки!</p>
+                        <div class="news-tag">#Меню</div>
+                        <div class="news-tag">#Сайт</div>
+                    </div>
+                </div>
+
+                <!-- Новость 4 -->
+                <div class="news-card">
+                    <div class="news-date">07.03.2025</div>
+                    <div class="news-content">
+                        <h2>Исправление ошибок</h2>
+                        <p>Были исправлены некоторые ошибки в работе сайта. Теперь можно спокойно заказывать!</p>
+                        <div class="news-tag">#Сайт</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>//скрипт для отображения счётчика на других страницах
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCartCounter();
+    });
+</script>
+
+</html>

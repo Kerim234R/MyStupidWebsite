@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+ <!-- Базовый код, название страницы и ссылка на CSS файл -->
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Ямато: Ресторан японской кухни</title>
+    <link rel = 'stylesheet' href = '../style.css'>
+    <link rel = 'stylesheet' href = 'about us-style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../theme.js"></script><!-- Скрипт на изменение темы -->
+    <script src="../menu.js"></script><!-- Скрипт на открытие меню -->
+    <script src="cart.js"></script>
+</head>
+
+<body>
+
+    <!-- Создание класса контейнер для хранения настроек интерфейса -->
+    <div class="container">
+        <!-- Гамбургер с сыром и кепчупом -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <!-- Левая столб с кнопками -->
+        <div class = "left-side">
+            <h1><b><big>Ямато</big></b> <button id="theme-toggle"><i class = "fas fa-sun"></i></button></h1>
+            <a href = "../index.html">Главная</a>
+            <a href = "menu.html">Меню</a>
+            <a href="cart.html">Корзина <span class="cart-counter"></span></a>
+            <a href = "promotions.html">Акции</a>
+            <a href = "news.html">Что нового</a>
+            <a href = "about us.html">О нас</a>
+        </div>
+
+        <!-- Основной контент -->
+        <div class = "main-content">
+            <h1>О нас <i class="fa-solid fa-thumbs-up fa-1x"></i></h1>
+            <hr>
+            <div class = "about-content">
+                <div class = "about-text">
+                    <p><big><strong>Ямато</strong></big> — это небольшой, но уютный и стильный ресторан японской кухни, где каждый гость может окунуться в атмосферу настоящей Японии. Мы предлагаем не просто еду, а настоящий гастрономический опыт, основанный на традиционных рецептах и современных трендах.</p>
+                    <p>Наши блюда готовятся исключительно из свежих и качественных продуктов, которые мы тщательно отбираем для того, чтобы сохранить аутентичный вкус японской кухни. Каждое блюдо в Ямато создаётся с любовью и вниманием к деталям.</p>
+                    <p>Мы ждём вас, чтобы подарить незабываемые впечатления и настоящий вкус Японии!</p>
+                </div>
+
+                <div class = "about-image">
+                    <img src = '../images/about us/yamato.jpg' alt = "Изображение ресторана"></img>
+                </div>
+            </div>
+
+                <hr>
+                <div class = "contact-info">
+                    <p>Наш адрес: <b>Федеральная трасса, въезд в с.Ботаюрт, рядом с медицинским центром "Здоровье"</b></p>
+                    <p>Номер телефона: <a href = 'sms:+79886336014'>+7 (989) 449-58-98</a></p>
+                    <p>Адресс электронной почты: <a href = mailto:kerimradzabilaev@gmail.com?subject=Тема%20письма&body=Текст%20письма>yamato@gmail.com</a></p>
+                </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script>//скрипт для отображения счётчика на других страницах
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCartCounter();
+    });
+</script>
+
+</html>

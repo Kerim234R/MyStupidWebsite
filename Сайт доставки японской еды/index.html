@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <!-- Базовый код, название страницы и ссылка на CSS файл -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ямато: Ресторан японской кухни</title>
+    <link rel = 'stylesheet' href = 'style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="theme.js"></script><!-- Скрипт на изменение темы -->
+    <script src="menu.js"></script><!-- Скрипт на открытие меню -->
+    <link rel = 'stylesheet' href = 'GUI/wallpaper.css'>
+    <script src="pages/cart.js"></script>
+</head>
+
+<body>
+
+    <!-- Создание класса контейнер для хранения настроек интерфейса -->
+    <div class="container">
+        <!-- Гамбургер с сыром и кепчупом -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Левая столб с кнопками -->
+        <div class="left-side"><!-- <i class="fas fa-home"></i> -->
+            <h1><b><big>Ямато</big></b> <button id="theme-toggle"><i class = "fas fa-sun"></i></button></h1>
+            <a href = "index.html">Главная</a>
+            <a href = "pages/menu.html">Меню</a>
+            <a href="pages/cart.html">Корзина<span class="cart-counter"></span></a>
+            <a href = "pages/promotions.html">Акции</a>
+            <a href = "pages/news.html">Что нового</a>
+            <a href = "pages/about us.html">О нас</a>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+            <div class="welcome-section">
+                <img src="images/about us/main.jpg" alt="Фото ресторана" class="full-screen-image">
+                <div class="welcome-text">
+                    <h1>Добро пожаловать в Ямато!</h1>
+                    <p>Наслаждайтесь лучшими блюдами японской кухни</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>//скрипт для отображения счётчика на других страницах
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCartCounter();
+    });
+</script>
+
+</html>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акции - Ямато</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="promotions-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../menu.js"></script>
+    <script src="../theme.js"></script>
+    <script src="cart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        <div class="left-side">
+            <h1><b><big>Ямато</big></b> <button id="theme-toggle"><i class="fas fa-sun"></i></button></h1>
+            <a href="../index.html">Главная</a>
+            <a href="menu.html">Меню</a>
+            <a href="cart.html">Корзина <span class="cart-counter"></span></a>
+            <a href="promotions.html">Акции</a>
+            <a href="news.html">Что нового</a>
+            <a href="about us.html">О нас</a>
+        </div>
+
+        <div class="main-content">
+            <h1>Акции <i class="fas fa-percent"></i></h1>
+            <hr>
+            
+            <div class="promotions-grid">
+                <!-- Акция 1 -->
+                <div class="promotion-card">
+                    <img src="../images/specials/ogurecroll_promo.jpg" alt="Скидка на роллы">
+                    <div class="promotion-content">
+                        <h2>Закажи 1 получи 2</h2>
+                        <p>Только в будние дни с 12:00 до 16:00 при заказе огуречных роллов получите +1 порцию в подарок!</p>
+                        <div class="promotion-period">
+                            <i class="far fa-calendar-alt"></i> 01.04 - 30.04.2025
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Акция 2 -->
+                <div class="promotion-card">
+                    <img src="../images/specials/birthdayoff15.png" alt="День рождения">
+                    <div class="promotion-content">
+                        <h2>Скидка 15% в день рождения</h2>
+                        <p>Предъявите паспорт в день рождения курьеру и получите скидку 15% на весь заказ!</p>
+                        <div class="promotion-period">
+                            <i class="far fa-calendar-alt"></i> Постоянная акция
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>//скрипт для отображения счётчика на других страницах
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCartCounter();
+    });
+</script>
+
+</html>
